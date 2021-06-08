@@ -8,6 +8,29 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+
+// iterative solution
+function fib(n) {
+    let first = 0;
+    let second = 1;
+    let result = 1;
+
+    for (i=2; i<=n; i++) {
+        result = second + first;
+        let temp = second;
+        second += first;
+        first = temp;
+    }
+
+    return result;
+}
+
+//recursive solution
+// function fib(n) {
+//     if (n <= 2) {
+//         return 1;
+//     }
+//     return fib(n-1) + fib(n-2);
+// }
 
 module.exports = fib;
