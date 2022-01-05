@@ -29,7 +29,15 @@ describe('Node', () => {
   });
 });
 
-describe.skip('Tree', () => {
+describe('Tree', () => {
+//  Example tree used in tests:
+//
+//               a
+//              / \
+//             b   c
+//            /
+//           d
+
   test('starts empty', () => {
     const t = new Tree();
     expect(t.root).toEqual(null);
@@ -55,13 +63,13 @@ describe.skip('Tree', () => {
     const t = new Tree();
     t.root = new Node('a');
     t.root.add('b');
-    t.root.add('d');
-    t.root.children[0].add('c');
+    t.root.add('c');
+    t.root.children[0].add('d');
 
     t.traverseDF(node => {
       letters.push(node.data);
     });
 
-    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+    expect(letters).toEqual(['a', 'b', 'd', 'c']);
   });
 });
